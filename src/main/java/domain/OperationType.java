@@ -1,5 +1,5 @@
 package domain;
 
 public enum OperationType {
-    DEPOSIT
+    DEPOSIT, WITHDRAW
 }

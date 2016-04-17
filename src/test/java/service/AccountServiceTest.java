@@ -27,4 +27,25 @@ public class AccountServiceTest {
 
         assertThat(account.getOperations()).hasSize(2);
     }
+
+    @Test
+    public void should_make_one_withdraw() {
+        Account account = new Account();
+        AccountService accountService = new AccountService(account);
+
+        accountService.withdraw(5D);
+
+        assertThat(account.getOperations()).hasSize(1);
+    }
+
+    @Test
+    public void should_make_multiple_withdraw() {
+        Account account = new Account();
+        AccountService accountService = new AccountService(account);
+
+        accountService.withdraw(5D);
+        accountService.withdraw(10D);
+
+        assertThat(account.getOperations()).hasSize(2);
+    }
 }
